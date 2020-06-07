@@ -1,8 +1,10 @@
 const express = require("express");
+const routes = require('./routes');
 
 const app = express();
 
 app.use(express.json());
+app.use(routes);
 
 /*
 Métodos HTTP:
@@ -18,17 +20,18 @@ Query Params: Parâmetros nomeados enviados na rota após "?" (filtros, paginaç
 Route Params: Parâmetros utilizados para identificar recursos
 Request Body: Corpo da requisição utilizado para criar ou alterar recursos
 
+Banco de Dados
+
+SQL: MySQL, SQLite, PostgreSQL, Oracle, MicrosoftSQL Server
+NoSQL: MongoDB, CouchDB, etc
+
+Opções de configuração do DB
+
+Driver: Select * FROM users
+Query Builder: table('users').select('*').where()
+
 */
-app.post('/', (req, res) => {
-  const body = req.body;
 
-  console.log(body)
-
-  return res.json({
-    evento: 'Semana Omnistack 11.0',
-    aluno: 'Diego Fernandes'
-  });
-});
 
 
 app.listen(3333);
