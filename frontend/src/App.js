@@ -1,12 +1,12 @@
 import React from 'react';
-import Logon from './pages/Logon';
+import Routes from './routes';
 import './global.css'
 
 //JSX (Java script e XML)
 
 function App() {
   return (
-    <Logon />
+    <Routes />
   );
 }
 
